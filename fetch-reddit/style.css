@@ -1,0 +1,13 @@
+.hidden {
+  display: none;
+}
+
+img {
+  width: 600px;
+  height: 600px;
+}
+
+li {
+  font-size: 25px;
+  margin: 20px;
+}
