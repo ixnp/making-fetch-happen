@@ -1,4 +1,6 @@
-let URL = 'https://www.reddit.com/r/programminghumor/.json'
+'use strict';
+
+let URL = 'https://www.reddit.com/r/programmerhumor/top/.json'
 
 function main() {
   fetchPosts()
@@ -32,5 +34,5 @@ function addPost(post) {
 
   const ul = document.getElementById('results')
   ul.appendChild(li);
-  li.appendChild(img);
+  ul.appendChild(img);
 }
