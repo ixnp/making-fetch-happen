@@ -1,3 +1,5 @@
+'use strict';
+
 // create a global variable to keep track of the movies
 // so we can filter through all the movies later
 let MOVIES = []
@@ -5,10 +7,7 @@ let MOVIES = []
 function loadMovies() {
   console.log('1. fetching movies')
   fetch('http://localhost:3000/movies')
-  .then(response => {
-    console.log('2. converting to json')
-    return response.json()
-  })
+  .then(response => response.json())
   .then(json => {
     console.log('3. got movies:', json)
     displayMovies(json)

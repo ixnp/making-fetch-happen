@@ -1,6 +1,6 @@
 'use strict';
 
-let URL = 'https://www.reddit.com/r/programmerhumor/top/.json'
+let URL = 'https://www.reddit.com/r/programmerhumor/.json'
 
 function main() {
   fetchPosts()
@@ -9,17 +9,20 @@ main()
 
 function fetchPosts() {
   fetch(URL)
-  .then(response => {
-    return response.json()
+  .then(res => {
+    console.log(res)
+    return res.json()
   })
   .then(json => {
-    console.log(json);
-    addAllPosts(json.data.children)
+    console.log(json)
+    return addAllPosts(json.data.children)
   })
 }
 
 function addAllPosts(posts) {
+  console.log(posts)
   for (let i = 0; i < posts.length; i++) {
+    console.log(posts[i])
     let post = posts[i]
     addPost(post)
   }
