@@ -1,4 +1,5 @@
 {
+  "meangirls":["regina", "queen bee"],
   "movies": [
     {"id": 1, "title": "CITIZEN KANE" , "year": "1941"},
     {"id": 2, "title": "CASABLANCA" , "year": "1942"},

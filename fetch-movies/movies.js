@@ -7,9 +7,12 @@ let MOVIES = []
 function loadMovies() {
   console.log('1. fetching movies')
   fetch('http://localhost:3000/movies')
-  .then(response => response.json())
+  .then(cat => {
+    console.log('2. convert to json', cat)
+    return cat.json();
+  })
   .then(json => {
-    console.log('3. got movies:', json)
+    console.log('3. got movies:', json);
     displayMovies(json)
   })
   console.log('4. end of function')
