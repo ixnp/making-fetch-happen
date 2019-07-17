@@ -7,23 +7,25 @@ function main() {
 }
 main()
 
-function fetchPosts() {
-  fetch(URL)
-  .then(res => {
-    console.log(res)
-    return res.json()
-  })
-  .then(json => {
-    console.log(json)
-    return addAllPosts(json.data.children)
-  })
+// function fetchPosts(){
+//   fetch(URL)
+//   .then(res => res.json())
+//   .then(json => {
+//     console.log(json)
+//     addAllPosts(json.data.children);
+//   })
+// }
+
+async function fetchPosts(){
+  let response = await fetch(URL)
+  let json = await response.json();
+  addAllPosts(json.data.children)
 }
 
 function addAllPosts(posts) {
-  console.log(posts)
   for (let i = 0; i < posts.length; i++) {
-    console.log(posts[i])
     let post = posts[i]
+    console.log(post)
     addPost(post)
   }
 }
